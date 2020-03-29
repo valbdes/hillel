@@ -36,22 +36,12 @@ class Student extends User
 }
 
 $emplo = new Employee();
-echo $emplo->getRevenue();
+echo 'Employee revenue before increase ' . $emplo->getRevenue() . '<br>'; 
 $emplo->increaseRevenue(300);
+echo 'Employee revenue after increase ' . $emplo->getRevenue() . '<br>';
+
 $student = new Student();
+echo 'Student revenue before increase ' . $student->getRevenue() . '<br>';
 $student->increaseRevenue(200);
-echo $student->getRevenue();
+echo 'Student revenue after increase ' . $student->getRevenue() . '<br>';
 
-$emplo = new Employee();
-echo "Employees Revenue was" . ' ' . $emplo->getRevenue();
-echo '<br>';
-$emplo->increaseRevenue(100);
-echo "Employees Revenue now" . ' ' . $emplo->getRevenue();
-
-echo '<br>';
-
-$stu = new Student();
-echo "Students Revenue was" . ' ' . $stu->getRevenue();
-echo '<br>';
-$stu->increaseRevenue(20);
-echo "Students Revenue now" . ' ' . $stu->getRevenue();
