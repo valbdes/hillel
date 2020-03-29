@@ -14,12 +14,6 @@ function tableCheck($pdo)
     if ($tableExists == true) {
         echo 'Such table already exists';
     } else {
-        // echo 'Bullshit';
-?><form action="action.php" method="post">
-            <!-- <p>Ваше имя: <input type="text" name="name" /></p>
-        <p>Ваш возраст: <input type="text" name="age" /></p> -->
-            <p><input type="submit" value="Create Table" name="createTable" /></p>
-        </form>
-<?php
+        require_once 'create_table.php';
     }
 }
