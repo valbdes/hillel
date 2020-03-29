@@ -10,7 +10,7 @@ abstract class User
 
 class Employee extends User
 {
-    private $revenue = 0;
+    private $revenue = 1;
     public function increaseRevenue()
     {
         $this->revenue += 200;
