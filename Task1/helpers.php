@@ -23,7 +23,6 @@ function getAllUserById(PDO $pdo)
     $query = "SELECT id FROM users ORDER BY id ASC ";
     $query = $pdo->query($query);
     $query = $query->fetchAll(PDO::FETCH_COLUMN);
-    
+
     return $query;
 }
-

@@ -14,4 +14,4 @@ if (!empty($_POST)) {
     }
 }
 ?>
-<a href="index.php">go back</a>
+<a href="index.php">Go back</a>

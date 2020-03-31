@@ -16,3 +16,5 @@ function getUserInfo(PDO $pdo)
 }
 
 echo '<pre>' . print_r(getUserInfo($pdo), true) . '</pre>';
+?>
+<a href="index.php">Go back</a>

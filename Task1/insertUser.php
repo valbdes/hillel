@@ -8,4 +8,4 @@ $query = "INSERT INTO users (name, surname, age, email, phone) VALUES (:name, :s
 $query = $pdo->prepare($query);
 $query->execute($userData);
 ?>
-<a href="index.php">go back</a>
+<a href="index.php">Go back</a>
