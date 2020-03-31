@@ -7,13 +7,23 @@ function getPDO()
 
 $pdo = getPDO();
 
-function tableCheck($pdo)
+function tableCheck(PDO $pdo)
 {
     $query = $pdo->query("SHOW TABLES LIKE 'users'");
     $tableExists = $query !== false && $query->rowCount() > 0;
     if ($tableExists == true) {
-        echo 'Such table already exists';
+        return true;
     } else {
-        require_once 'create_table.php';
+        return false;
     }
 }
+
+function getAllUserById(PDO $pdo)
+{
+    $query = "SELECT id FROM users ORDER BY id ASC ";
+    $query = $pdo->query($query);
+    $query = $query->fetchAll(PDO::FETCH_COLUMN);
+    
+    return $query;
+}
+

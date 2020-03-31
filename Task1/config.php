@@ -1,4 +1,7 @@
 <?php
+error_reporting(E_ALL);
+error_reporting(-1);
+ini_set('error_reporting', E_ALL);
 
 define("SQL_DIR", __DIR__ . '/sql/');
 define('DB_HOST', 'localhost');
