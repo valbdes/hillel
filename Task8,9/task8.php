@@ -7,7 +7,7 @@ ini_set('error_reporting', E_ALL);
 class CsvIterator implements Iterator
 {
     private $i = 0;
-    private $csv;
+    private $csv ;
 
     public function __construct($csv)
     {
