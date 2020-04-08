@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="./styles/main.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+</head>
+
+<body>
+    <div class="wrapper">
+        <header class="header">
+            <!-- Навигация -->
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <a class="navbar-brand font-weigth" href="#"><img src="img/samsung.png"></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Главная <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Смартфоны</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Аксессуары
+                            </a>
+
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="#">Чехлы</a>
+                                <a class="dropdown-item" href="#">Защитные плёнки и стёкла </a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Зарядные устройства</a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Контакты</a>
+                        </li>
+                    </ul>
+                    <form class="form-inline my-2 my-lg-0 col-5">
+                        <input class="form-control mr-sm-2 ml-auto col-6" type="search"
+                            placeholder="Введите название товара" aria-label="Search">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Поиск</button>
+                    </form>
+                </div>
+            </nav>
+
+        </header>
+        <main class="main">
+            <div class="block banner container-fluid">
+                <!-- Slick slider -->
+                <div class="slider">
+                    <div class="slide">
+                        <div class="slide-content">
+                            <div class="slide-img"><img src="img/banner-1.jpg" alt="..."></div>
+                            <div class="slide-text">
+                                <h2>Безупречен снаружи и внутри</h2>
+                                <p>Подчеркните свой стиль с инновационными цветами, <br> созданными при помощи
+                                    специальной
+                                    наноламинированной пленки. <br> Целый спектр футуристичных призматических оттенков -
+                                    такого вы еще не видели.</p>
+                                <button class="btn btn-outline-secondary">Подробнее</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <div class="slide-content">
+                            <div class="slide-img"><img src="img/banner-2.jpg" alt="..."></div>
+                            <div class="slide-text">
+                                <h2>Лучше один раз увидеть </h2>
+                                <p>Иммерсивный 6,4” Quad HD+ экран с технологией Dynamic AMOLED <br> обладает невероятно
+                                    высокой контрастностью и улучшенной цветопередачей.</p>
+                                <button class="btn btn-outline-secondary">Подробнее</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <div class="slide-content">
+                            <div class="slide-img  flex-shrink-0"><img src="img/banner-3.jpg" alt="..."></div>
+                            <div class="slide-text ">
+                                <h2>Смотрите, как в кинотеатре</h2>
+                                <p>Наслаждайтесь уникальным кинематографичным видом на экране вашего смартфона как в
+                                    солнечный день, так и в условиях низкого освещения.HDR10+ экран с технологией
+                                    динамического отображения тона обеспечит насыщенный цвет и реалистичный контраст
+                                    изображения.</p>
+                                <button class="btn btn-outline-secondary">Подробнее</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="block text-section container">
+                <h1>Встречайте новое поколение Galaxy.</h1>
+                <p>Представляем обновленные Galaxy - целую линейку моделей специально для вас. Революционная камера
+                    позволит запечатлеть мир таким, как вы его видите. Потрясающий экран с эффектом полного погружения
+                    подарит невероятные впечатления. Мощный аккумулятор станет залогом свободы от розеток и откроет море
+                    возможностей. И, конечно, технология Samsung Knox, которая защитит вашу личную информацию на всех
+                    уровнях.</p>
+            </div>
+            <!-- Карточки товара -->
+            <div class="block catalog container">
+                <div class="row">
+                    <div class="col-4">
+                        <div class="card">
+                            <img src="img/card-banner-1.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Samsung Galaxy A80</h5>
+                                <p class="card-text">Экран 6.4", Super AMOLED, 1560 x 720/ Samsung Exynos 7904 (1.8Ггц)/
+                                    основная камера: 13 Мп + 5 Мп + 5 Мп, фронтальная камера: 16 Мп/ RAM 6 ГБ/ 64 ГБ
+                                </p>
+                                <button type="button" class="btn btn-success" data-toggle="modal"
+                                    data-target="#exampleModal">
+                                    Оформить заказ
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="card">
+                            <img src="img/card-banner-2.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Samsung Galaxy S11</h5>
+                                <p class="card-text">Экран (6.3", Dynamic AMOLED, 2280x1080)/ Qualcomm Snapdragon 855
+                                    (1x2.84 ГГц + 3x2.42 ГГц + 4x1.8 ГГц)/ тройная основная камера: 12 Мп + 12 Мп + 16
+                                    Мп/ фронтальная: 10 Мп / RAM 8 ГБ/ 256 ГБ встроенной памяти</p>
+                                <button type="button" class="btn btn-success" data-toggle="modal"
+                                    data-target="#exampleModal">
+                                    Оформить заказ
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="card">
+                            <img src="img/card-banner-3.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Samsung Galaxy A70</h5>
+                                <p class="card-text">Экран 6.4", Super AMOLED, 2340x1080/ Samsung Exynos 7904 (2x1.8 ГГц
+                                    + 6x1.6 ГГц)/ двойная основная камера: 16 Мп + 5 Мп, фронтальная камера: 16 Мп/ RAM
+                                    4 ГБ/ 64 ГБ встроенной памяти + microSD (до 512 ГБ)
+                                </p>
+                                <button type="button" class="btn btn-success" data-toggle="modal"
+                                    data-target="#exampleModal">
+                                    Оформить заказ
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Pop up окно -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Оформление</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                Спасибо за Ваш заказ
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Продолжить
+                                    покупки</button>
+                                <button type="button" class="btn btn-primary">Перейти к оформлению</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="block subscribe container">
+                <div class="row">
+                    <div class="col-7">
+                        <h2>Ваш купон на скидку</h2>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odio voluptatum id perferendis quis
+                            nulla</p>
+                    </div>
+                    <div class="col-5">
+                        <form>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Введите купон</label>
+                                <input type="email" class="form-control" id="exampleInputEmail1" maxlength="12"
+                                    aria-describedby="emailHelp" placeholder="000-000-000-000">
+                                <small id="emailHelp" class="form-text text-muted">Купон распространяется только на
+                                    аксессуары</small>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Отправить</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <!-- Footer -->
+        <footer class="footer container-fluid">
+            <div class="d-flex footer-content">
+                <div class="footer-social-content d-inline-flex">
+                    <img src="img/facebook.png" alt="">
+                    <img src="img/twitter.png" alt="">
+                    <img src="img/instagram.png" alt="">
+                </div>
+                <div class="footer-text">
+                    <h2>Хотите получать новости? </h2>
+                    <p>Тогда спешите подписаться</p>
+                </div>
+                <div class="footer-form">
+                    <form>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Ваш адрес электронной почты</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1"
+                                placeholder="example@email.com" aria-describedby="emailHelp">
+                        </div>
+                        <button type="submit" class="btn btn-outline-info">Подписаться</button>
+                    </form>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.slider').slick();
+        });
+    </script>
+    <script>
+        $('#myModal').on('shown.bs.modal', function () {
+            $('#myInput').trigger('focus')
+        })
+    </script>
+</body>
+
+</html>
