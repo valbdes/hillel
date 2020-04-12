@@ -8,26 +8,29 @@ $userData = $_POST;
 $namePatt = '/^.{1,15}$/m';
 $passPatt = '/[a-zA-Zа-яА-Я,\-_\d]{8,}/m';
 $emailPatt = '/[a-zA-Z0-9._-]{2,}[@]{1}[a-z-A-Z]+[.]{1}[a-zA-Z]+/';
-$infoPatt = '/[A-Z]+/m';
-$repPatt = '$0';
+$infoPatt = '/[A-ZА-Я]+/m';
+$callBack = function ($match) {
+    echo '<pre>' . var_dump($match) . '</pre>';
+    return mb_strtolower($match[0]);
+};
+
 
 if (preg_match($namePatt, $userData['login'])) {
     echo 'Hello' . ' ' .  $userData['login'] . '<br>';
 } else {
-    echo 'Max length of the name 15 letters' . '<br>';
+    echo 'Incorrect login' . '<br>';
 };
 if (!preg_match($passPatt, $userData['password'])) {
-    echo 'incorrect password' . '<br>';
+    echo 'Incorrect password' . '<br>';
 } else {
-    echo 'Valid password';
+    echo 'Valid password' . '<br>';
 };
 if (preg_match($emailPatt, $userData['email'])) {
-    echo 'Email Correct' . '<br>';
+    echo 'Valid email' . '<br>';
 } else {
-    echo 'Incorrect email';
+    echo 'Incorrect email' . '<br>';
 };
 
- $result = preg_replace($infoPatt, $repPatt, $userData['info']);
+$result = preg_replace_callback($infoPatt, $callBack, $userData['info']);
 
- echo $result;
-
+echo $result;
