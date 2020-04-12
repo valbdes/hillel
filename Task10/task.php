@@ -17,7 +17,7 @@ $index_string = file_get_contents(__DIR__ . '/index.html');
 
 
 $str = '/<[a-z]+(\s+[a-z]+=[\'|"].+[\'|"])*>(.*)<\/[a-z]+>/mu';
-$str1 = '/<[a-z]{5}>(.+)<\/[a-z]{5}>/mu';
+$str1 = '/<title>(.+)<\/title>/mu';
 preg_match_all($str1, $index_string, $matches);
 
 
