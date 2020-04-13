@@ -10,7 +10,6 @@ $passPatt = '/[a-zA-Zа-яА-Я,\-_\d]{8,}/m';
 $emailPatt = '/[a-zA-Z0-9._-]{2,}[@]{1}[a-z-A-Z]+[.]{1}[a-zA-Z]+/';
 $infoPatt = '/[A-ZА-Я]+/m';
 $callBack = function ($match) {
-    echo '<pre>' . var_dump($match) . '</pre>';
     return mb_strtolower($match[0]);
 };
 
@@ -34,3 +33,43 @@ if (preg_match($emailPatt, $userData['email'])) {
 $result = preg_replace_callback($infoPatt, $callBack, $userData['info']);
 
 echo $result;
+class Field
+{
+    private $name;
+    private $rule;
+
+public function __construct($name,$rule)
+{
+  $this->name->$name;
+  $this->rule->$rule;
+  
+}
+public function getName()
+{
+    return $this->name;
+}
+
+public function getRule()
+{
+    return $this->rule;
+}
+
+
+}
+class Validator 
+{
+    private array $rule ;
+    private array $field;
+
+public  function __construct($rule, $field)
+{
+  $this->rule->$rule;
+  $this->field->$field;
+
+}
+public  function validate()
+{
+    return preg_match($this->rule,$this->field);
+}
+}
+

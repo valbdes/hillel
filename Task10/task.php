@@ -3,33 +3,19 @@
 error_reporting(E_ALL);
 error_reporting(-1);
 ini_set('error_reporting', E_ALL);
+//**1. Написать регулярку для проверки Является ли строка числом, длиной до 5 цифр */
 $pattern = '/^[0-9]{1,5}$/';
-$reg = '/\s{2,}/';
-$reg2 = ' ';
-
-$text = 'Hello  world?How  are     you need  back    up';
-
-$ready = preg_replace($reg,$reg2,$text);
-echo $ready . '<br>';
-   
-$index_string = file_get_contents(__DIR__ . '/index.html');
-
-
-
-$str = '/<[a-z]+(\s+[a-z]+=[\'|"].+[\'|"])*>(.*)<\/[a-z]+>/mu';
-$str1 = '/<title>(.+)<\/title>/mu';
-preg_match_all($str1, $index_string, $matches);
-
-
+$string = '12345';
+$result = preg_match($pattern, $string);
+echo  $result . '<br>';
+//**2. Заменить все повторяющиеся пробелы в тексте на один */
+$patt = '/\s{2,}/';
+$rep = ' ';
+$text = 'Hello  world!How  are     you .Everething is      fine     ?need  back    up?';
+$ready = preg_replace($patt,$rep,$text);
+echo $ready . '<br>'; 
+//**3. Найти текст, заключенный в какой-то тег, например <TITLE> ... </TITLE> из HTML-файла и вывести данный текст */ 
+$indexString = file_get_contents(__DIR__ . '/index.html');
+$pat = '/<title>(.+)<\/title>/mu';
+preg_match_all($pat, $indexString, $matches);
 echo '<pre>'. print_r($matches[1][0],true)  . '</pre>';
-
-// strval($index_string);
-// $str = '/<[a-z]+(\s+[a-z]+=[\'|"].+[\'|"])*>.*<\/[a-z]+>/mu';
-// $str1 = '/<[a-z]+>[a-zA-Z]<\/[a-z]+>/mu';
-// $str2 = '/[a-zA-Z]+/mu';
-// preg_match_all($str, $index_string, $matches, PREG_PATTERN_ORDER);
-// $whatinside = $matches[0];
-// preg_match_all($str2,$whatinside,$match,PREG_SET_ORDER);
-// echo print_r($match[0],true);
-
-// echo '<pre>'. print_r($matches[0],true)  . '</pre>';

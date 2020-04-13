@@ -1,4 +1,4 @@
-<form action="login_user.php" name='login_user' method="POST">
+<form action="class.php" name='login_user' method="POST">
     <div class="form-group">
         <input required type="text" name="login" placeholder="Login"><br>
         <input required type="password" name="password" placeholder="Password"><br>
