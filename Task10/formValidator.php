@@ -16,7 +16,7 @@ class Form
     }
     public function getRule($name)
     {
-        return $this->fields[$name];
+        return $this->fields[$name]->getRule();
     }
 }
 class Field
@@ -29,10 +29,11 @@ class Field
         $this->name = $name;
         $this->rule = $rule;
     }
+    public function getRule()
+    {
+        return $this->rule;
+    }
 }
-
-
-
 class Validator
 {
     private  $data;
@@ -46,26 +47,44 @@ class Validator
     public  function validate()
     {
         $invalid = [];
-        foreach ($this->data as $field=>$value) {
+        foreach ($this->data as $field => $value) {
             $rule = $this->form->getRule($field);
-            if (!preg_match($rule, $this->data[$field])) {
+            if (!preg_match($rule, $value)) {
                 array_push($invalid, $field);
             };
         }
-        return !!count($invalid);
+        $result = !count($invalid);
+        $this->getMessage($result, $invalid);
+        return $result;
+    }
+    public function getMessage($result, $invalid = [])
+    {
+        if ($result) {
+            echo 'Form is valid' . '<br>';
+        } else {
+            echo 'The following fields are not valid: ' . implode(',', $invalid) . '<br>';
+        }
     }
 }
 
-$fields = ['login', 'password', 'email'];
+$userData = $_POST;
+$fields = ['login', 'password', 'email', 'info'];
 $rules = [
     'login'     => '/^.{1,15}$/m',
     'password'  => '/[a-zA-Zа-яА-Я,\-_\d]{8,}/m',
-    'email'     => '/[a-zA-Z0-9._-]{2,}[@]{1}[a-z-A-Z]+[.]{1}[a-zA-Z]+/'
+    'email'     => '/[a-zA-Z0-9._-]{2,}[@]{1}[a-z-A-Z]+[.]{1}[a-zA-Z]+/',
+    'info'      => '/[A-ZА-Я]+/m'
 ];
+$callBack = function ($match) {
+    return mb_strtolower($match[0]);
+};
 $form = new Form($fields, $rules);
-$userData = $_POST;
+
 
 if (isset($userData)) {
     $validator = new Validator($userData, $form);
     $validator->validate();
 }
+
+$info = preg_replace_callback($form->getRule('info'), $callBack, $userData['info']);
+echo 'Lowercase letters : ' . $info;

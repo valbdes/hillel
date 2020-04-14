@@ -5,9 +5,14 @@ error_reporting(-1);
 ini_set('error_reporting', E_ALL);
 //**1. Написать регулярку для проверки Является ли строка числом, длиной до 5 цифр */
 $pattern = '/^[0-9]{1,5}$/';
-$string = '12345';
+$string = '12343335';
 $result = preg_match($pattern, $string);
-echo  $result . '<br>';
+if($result){
+    echo 'Correct string' . '<br>';
+}else{
+    echo 'Incorrect string' . '<br>';
+}
+ 
 //**2. Заменить все повторяющиеся пробелы в тексте на один */
 $patt = '/\s{2,}/';
 $rep = ' ';
