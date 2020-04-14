@@ -1,12 +1,57 @@
 <?php
 
-//  Создайте класс User с полями id (должно содержать только число) и password (длина поля должна быть
-// не более 8 символов) и методом getUserData, который возвращает id и email. Обработайте исключения,
-
-// когда id содержит не число и password содержит более 8 символов, при этом выведите сообщение
-
-// исключения, файл в котором данное исключение возникло и номер строки.
-
 error_reporting(E_ALL);
 error_reporting(-1);
 ini_set('error_reporting', E_ALL);
+
+class User
+{
+    private $id;
+    private $password;
+    private $email;
+
+    public function __construct($id, $password, $email)
+    {
+        $this->id = $id;
+        $this->password = $password;
+        $this->email = $email;
+    }
+    public function getUserData()
+    {
+        $userData = [
+            'id'       => $this->id,
+            'password' => $this->password
+        ];
+        return  $userData;
+    }
+}
+class myException extends Exception
+{
+    public function errorMessage()
+    {
+        $errorMsg = 'Error in ' . $this->getFile()
+            . ' on line ' . $this->getLine() . ': <b>' . $this->getMessage();
+        return $errorMsg;
+    }
+}
+$rule = '/^.{1,8}$/';
+$user = new User('1dfdfdf1', 'sdsddsdsdsdsdsds', 'vadfd@gdfdfdfdfdfmail.com');
+// too mutch if's
+try {
+
+    $massage = '';
+    if (!preg_match($rule, $user->getUserData()['password']) === true) {
+
+        $massage .= 'Invalid password ';
+    }
+    if (gettype($user->getUserData()['id']) !== 'integer') {
+        $massage .= "Wrong type. id shoud be integer";
+    }
+    if ($massage != '') {
+        throw new myException($massage);
+    } else {
+        echo '<pre>' . print_r($user->getUserData(), true) . '</pre>';
+    }
+} catch (myException $e) {
+    echo $e->errorMessage();
+}
