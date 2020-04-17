@@ -36,19 +36,19 @@ class myException extends Exception
 }
 $rule = '/^.{1,8}$/';
 $user = new User('1dfdfdf1', 'sdsddsdsdsdsdsds', 'vadfd@gdfdfdfdfdfmail.com');
-// too mutch if's
+// too much if's
 try {
 
-    $massage = '';
+    $message = '';
     if (!preg_match($rule, $user->getUserData()['password']) === true) {
 
-        $massage .= 'Invalid password ';
+        $message .= 'Invalid password ';
     }
     if (gettype($user->getUserData()['id']) !== 'integer') {
-        $massage .= "Wrong type. id shoud be integer";
+        $message .= "Wrong type. id shoud be integer";
     }
-    if ($massage != '') {
-        throw new myException($massage);
+    if ($message != '') {
+        throw new myException($message);
     } else {
         echo '<pre>' . print_r($user->getUserData(), true) . '</pre>';
     }
