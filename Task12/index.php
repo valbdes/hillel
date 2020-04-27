@@ -19,9 +19,9 @@ try {
     $obj1 = new DashboardController();
     $obj2 = new OrdersController();
     $obj3 = new ImageHelper();
-    $obj3 = new Order();
-    $obj3 = new Product();
-    $obj3 = new User();
+    $obj4 = new Order();
+    $obj5 = new Product();
+    $obj6 = new User();
 } catch (Throwable $t) {
     echo  $t->getMessage();
 }
