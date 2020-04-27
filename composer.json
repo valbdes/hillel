@@ -1,0 +1,12 @@
+{
+    "name": "valbdes/hillel",
+    "description": "Something",
+    "require": {
+        "psr/log": "^1.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Models\\": "Task12/App/Models/"
+        }
+    }
+}
